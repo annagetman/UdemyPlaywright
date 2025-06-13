@@ -28,9 +28,5 @@ test.describe("Feedback Form", () => {
             await page.click("input[type='submit']")
             await page.waitForSelector('#feedback-title')
         })
-
-
-
     })
-
 })
