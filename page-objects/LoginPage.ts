@@ -8,6 +8,8 @@ export class LoginPage {
  readonly submitButton: Locator;
  readonly errorMessage: Locator;
  
+  //Init selectors using constructor
+
  //Init selectors using constructor
 constructor(page: Page) {
     this.page = page;

@@ -38,6 +38,8 @@ test.describe.parallel("Login / Logout Flow", () => {
 
         // const accountsSummeryTab = await page.locator('#account_summary_tab')
         // await expect(accountsSummeryTab).toBeVisible()
+                // await expect(accountsSummeryTab).toBeVisible()
+
 
         await page.goto('http://zero.webappsecurity.com/logout.html')
         await expect(page).toHaveURL('http://zero.webappsecurity.com/index.html')
