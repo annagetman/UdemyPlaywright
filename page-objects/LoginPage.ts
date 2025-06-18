@@ -28,6 +28,8 @@ await this.page.goto('http://zero.webappsecurity.com/');
     await this.usernameInput.fill(username);
     await this.passwordInput.fill(password);
     await this.submitButton.click();
+    await this.page.goBack()
+    await this.page.click('#transfer_funds_link');
   }
 
   async assertErrorMessage() {
