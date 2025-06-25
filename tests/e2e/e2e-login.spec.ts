@@ -19,6 +19,7 @@ test.describe.parallel("Login / Logout Flow", () => {
     test('Negative Scenario for login', async ({page}) => {
         await homePage.clickSignIn()
         await loginPage.login('invalid username', 'invalid password')
+        await loginPage.wait(3000) // Wait for 3 seconds to see the error message
         await loginPage.assertErrorMessage()
     })
 

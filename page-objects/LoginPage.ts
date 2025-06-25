@@ -1,8 +1,9 @@
 import { expect, Locator, Page } from "@playwright/test";
+import { AbstractPage } from "./AbstractPage";
 
-export class LoginPage {
+export class LoginPage extends AbstractPage {
  // Define selectors
- readonly page: Page;
+ //readonly page: Page;
  readonly usernameInput: Locator;
  readonly passwordInput: Locator;
  readonly submitButton: Locator;
@@ -12,7 +13,8 @@ export class LoginPage {
 
  //Init selectors using constructor
 constructor(page: Page) {
-    this.page = page;
+    //this.page = page;
+    super(page); // Call the constructor of AbstractPage
     this.usernameInput = page.locator('#user_login');
     this.passwordInput = page.locator('#user_password');
     this.submitButton = page.locator('text=Sign in');
@@ -28,8 +30,6 @@ await this.page.goto('http://zero.webappsecurity.com/');
     await this.usernameInput.fill(username);
     await this.passwordInput.fill(password);
     await this.submitButton.click();
-    await this.page.goBack()
-    await this.page.click('#transfer_funds_link');
   }
 
   async assertErrorMessage() {
